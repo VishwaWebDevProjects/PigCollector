@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Piggies</title>
+      <link rel="icon" type="image/png" href="favicon.png">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+      <link rel="stylesheet" href="piggies.css">      
+  </head>
+
+  <body class="p-3 mb-2 bg-dark text-white">
+
+    <h1>Pigs</h1>
+
+    <section class="container">
+      <section id="histoCreator">
+        <table id="bigT2" class="table table-striped table-bordered table-dark table-hover"> 
+            <tr>
+              <th>Name</th>
+              <th>Category</th>
+              <th></th>
+              <th></th>
+            </tr>
+        </table>
+
+        <table id="bigT" class="table table-striped table-bordered table-dark table-hover"></table>
+      </section>
+
+      <section>
+          <button class="btn btn-primary glow-on-hover" id="addBtn">Add</button>
+          <button class="btn btn-primary glow-on-hover" id="cancelBtn">Cancel</button>
+          <button class="btn btn-primary glow-on-hover" id="removeAllBtn">Remove All</button>
+      </section>
+
+      <section id="additionForm">
+        <form id="myForm">
+          <table class="table table-striped table-bordered table-dark table-hover">
+            <tr>
+              <th colspan="2">Add new</th>
+            </tr>
+              
+            <tr>
+              <td>Name</td>
+              <td>
+                <input type="text" id="piggoName" class="input" required>
+              </td>
+            </tr>
+            
+            <tr>
+              <td>Height</td>
+              <td>
+                <input type="number" id="piggoHeight" class="input" min="1" required>
+              </td>
+            </tr>
+            
+            <tr>
+              <td>Weight</td>
+              <td>
+                <input type="number" id="piggoWeight" class="input" min="1" required>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Personality</td>
+              <td>
+                <input type="text" id="piggoPersonality" class="input" required>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Category</td>
+              <td>
+                <select name="category" id="pigCategory" class="input" required>
+                  <option value="cac">Choose a category</option>
+                  <option value="Grey">Grey</option>
+                  <option value="Chestnut">Chestnut</option>
+                  <option value="White">White</option>
+                  <option value="Black">Black</option>
+                </select>
+              </td>
+            </tr>
+
+            <tr style="display: none" id="piggoBreedRow">
+              <td>Breed</td>
+              <td>
+                <select name="breed" id="breedInput" id="piggoBreed" required>
+                  <option id="chooseBreed" value="cab">Choose a breed</option>
+                  <option class="optionVals" value=""></option>
+                  <option class="optionVals" value=""></option>
+                  <option class="optionVals" value=""></option>
+                </select>
+              </td>
+            </tr>
+
+            <tr style="display: none;" id="uniqueAttribute">
+              <td id="uniqueAttributeText"></td>
+              <td>
+                <input id="piggoUniqueAttribute" required oninput="this.nextElementSibling.value = this.value">
+                <output class="showIDorNot" id="showID"></output>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="2">
+                <input type="submit" id="create" disabled>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </section>
+
+      <table class="showMore table table-bordered table-dark table-hover" id="tf" name="showMoreDetailsTable">
+          <tr>
+            <th colspan="2">More info:</th>
+          </tr>
+
+          <tr>
+            <td>Name</td>
+            <td id="moreInfoName" class="moreInfoDetails"></td>
+          </tr>
+
+          <tr>
+            <td>Breed</td>
+            <td id="moreInfoBreed" class="moreInfoDetails"></td>
+          </tr>
+
+          <tr>
+            <td>Height</td>
+            <td id="moreInfoHeight" class="moreInfoDetails"></td>
+          </tr>
+
+          <tr>
+            <td>Weight</td>
+            <td id="moreInfoWeight" class="moreInfoDetails"></td>
+          </tr>
+
+          <tr>
+            <td id="specialData"></td>
+            <td id="moreInfoStrength" class="moreInfoDetails"></td>
+          </tr>
+
+          <tr>
+            <td>Personality</td>
+            <td id="moreInfoPersonality" class="moreInfoDetails"></td>
+          </tr>
+
+          <tr>
+            <td>Category</td>
+            <td id="moreInfoCategory" class="moreInfoDetails"></td>
+          </tr>
+      </table>
+
+      <iframe name="frame"></iframe>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.47/system.js" integrity="sha512-mkBpeD76fJnxFHGZstCL0mPCW6E3RFtUzfp5Ye8oQg2rxQNHy4BgHsbmvSizsq3fgF4PGozPI1BzGCB/h1Yq5g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+          System.defaultJSExtensions = true
+          System.import('main')
+    </script>
+
+  </body>
+</html>
